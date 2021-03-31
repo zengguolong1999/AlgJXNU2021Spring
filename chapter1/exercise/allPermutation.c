@@ -27,7 +27,8 @@ void allPermutation(int *arr, int left, int right) {
     }
 }
 
-void pArr(int *arr, int len) { for (int i=0; i<len; i++) {
+void pArr(int *arr, int len) { 
+    for (int i=0; i<len; i++) {
         printf("%d ", arr[i]);
     }
     printf("\n");

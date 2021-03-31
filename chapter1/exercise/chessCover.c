@@ -21,6 +21,8 @@ main() {
     print2D(chessBoard, boardSize, boardSize);
 }
 
+// chessCover will cover the chess board with "the three block".
+// The chess board is defined by 2D array "arr", position of left-top block "posX" and "posY" and the size of chess board "len". The "errX" and "errY" represent the special block of a chess board.
 void chessCover(int **arr, int posX, int posY, int len, int errX, int errY, int *id) {
     if (len == 2) {
         cover(arr, posX, posY, errX, errY, id);
@@ -55,6 +57,12 @@ void chessCover(int **arr, int posX, int posY, int len, int errX, int errY, int 
     }
 }
 
+// cover will cover the chess board whose "len" is 2 with "id".
+// i.e. given arr data[2][2] and call cover(data, 0, 0, 0, 1, &id); The result of data will be 
+// {
+//      id, 0,
+//      id, id,
+// }
 void cover(int **arr, int posX, int posY, int errX, int errY, int *id) {
     for (int i=posX; i<posX+2; i++) {
         for (int j=posY; j<posY+2; j++) {
@@ -66,6 +74,7 @@ void cover(int **arr, int posX, int posY, int errX, int errY, int *id) {
     *id += 1;
 }
 
+// print2D will print all elements of 2D array "arr".
 void print2D(int **arr, int xl, int yl) {
     for (int i=0; i<xl; i++) {
         for (int j=0; j<yl; j++) {

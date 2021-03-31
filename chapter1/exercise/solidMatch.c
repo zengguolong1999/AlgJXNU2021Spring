@@ -40,7 +40,7 @@ main() {
                 for (int j=0; j<5; j++) {
                     int womanIndex = men[manIndex][j];
                     if (isWomenMatched[womanIndex]) {
-                        int theThree;
+                        int theThree; // theThree means the other man who likes the woman.
                         for (theThree = 0; theThree < 5; theThree++) {
                             if (matched[theThree] == womanIndex) {
                                 break;
