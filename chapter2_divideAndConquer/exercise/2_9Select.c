@@ -19,12 +19,13 @@ int main() {
     int arr[LENARR];
     srand(time(0));
     for (int i=0; i<LENARR; i++) {
-        arr[i] = 5;
+        arr[i] = rand()%100+1;
     }
     pArr(arr, LENARR);
     int wantNth = rand()%LENARR + 1;
-    randomizedSelect(arr, 0, LENARR-1, wantNth);
+    int res = randomizedSelect(arr, 0, LENARR-1, wantNth);
     printf("want: %d\n", wantNth);
+    printf("wantNth: %d\n", res);
     pArr(arr, LENARR);
 }
 
@@ -76,7 +77,7 @@ int randomizedSelect(int *nums, int left, int right, int wantNth) {
     if (left == right) { // Is this the real break out point?
         return nums[left];
     }
-    pArr(nums, LENARR);
+    //pArr(nums, LENARR);
     int bound = randomizedPartition(nums, left, right);
     int lElementCount = bound-left+1;
     if (wantNth <= lElementCount) {

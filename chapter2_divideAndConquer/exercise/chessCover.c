@@ -15,6 +15,7 @@ main() {
         chessBoard[i] = chessRow;
     }
     chessBoard[0][0] = 0;
+    chessBoard[0][1] = 3;
     int id = 1;
     print2D(chessBoard, boardSize, boardSize);
     chessCover(chessBoard, 0, 0, boardSize, 0, 0, &id);
